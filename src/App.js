@@ -12,15 +12,17 @@ class App extends Component {
     }
   }
 
+    // A function declaration is  neccesary when we make our own functions inside of a class
   onSearchChange = (event) => {
-    // this.setState line is neccesary when we make our own functions inside of a class
+    // this.setState must use the format to operate on the elements inside. I.E (searchfield)
     this.setState({searchfield:event.target.value})
-    console.log(event.target.value);
-    console.log(filteredRobots);
+    // console.log(event.target.value);
+    // console.log(filteredRobots);
   }
   render(){
+    // Assigning a function to be used in a return
     const filteredRobots = this.state.robots.filter(robots =>{
-      return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+      return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
     })
   return(
     <div className='tc'>
